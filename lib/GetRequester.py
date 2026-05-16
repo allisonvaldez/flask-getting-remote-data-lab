@@ -15,11 +15,11 @@ class GetRequester:
         self.url = url
     
     """
-    Function for receiving response from API after the GET request is sent to self.url. Parse the response into JSON below since it is returned here as a string. Return what is gathered from the API.
+    Function for receiving response from API after the GET request is sent to self.url. Parse the response into JSON below since it is returned here as a raw bytes. Return what is gathered from the API.
     """
     def get_response_body(self):
         response = requests.get(self.url)
-        return response.text
+        return response.content
 
     """
     Function for loading and parsing JSON returned output from the prior function.
